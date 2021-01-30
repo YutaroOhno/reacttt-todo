@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Todos from './components/containers/todos'
+import todoUseCase from './usecases/todo'
+import TodoRepo from './infra/repositories/todoMock'
+
+const usecase = new todoUseCase(
+  new TodoRepo()
+)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <p>fdsfdsfds</p>
+    <Todos usecase={usecase} />
   </React.StrictMode>,
   document.getElementById('root')
 );
